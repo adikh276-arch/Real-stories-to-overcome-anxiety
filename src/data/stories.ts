@@ -83,6 +83,7 @@ export const stories: Story[] = [
   {
     name: "Nisha",
     age: 34,
+    image: "/images/nisha.webp",
     quote: "I got promoted — and then couldn't sleep.",
     body: [
       `My anxiety began after something "good" happened.`,
