@@ -4,6 +4,7 @@ export interface Story {
   quote: string;
   body: string[];
   reflection: string;
+  image?: string;
 }
 
 export const stories: Story[] = [
