@@ -64,6 +64,7 @@ export const stories: Story[] = [
   {
     name: "Kabir",
     age: 45,
+    image: "/images/kabir.webp",
     quote: "My anxiety never looked like panic. It looked like productivity.",
     body: [
       `I woke up early, worked long hours, and filled every spare moment with something — news, emails, phone calls, background noise. If there was silence, I filled it. If there was stillness, I escaped it.`,
