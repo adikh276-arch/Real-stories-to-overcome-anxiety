@@ -25,7 +25,7 @@ const StorySelectionScreen: FC<StorySelectionScreenProps> = ({ onSelect }) => {
               ${index === 0 ? "animate-fade-in-up" : ""}
               ${index === 1 ? "animate-fade-in-up-delay-1" : ""}
               ${index === 2 ? "animate-fade-in-up-delay-2" : ""}
-              ${index === 3 ? "animate-fade-in-up-delay-3" : ""}
+              ${index >= 3 ? "animate-fade-in-up-delay-3" : ""}
             `}
           >
             <p className="font-body font-semibold text-base text-foreground">
