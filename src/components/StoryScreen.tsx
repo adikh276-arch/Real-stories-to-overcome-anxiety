@@ -26,9 +26,21 @@ const StoryScreen: FC<StoryScreenProps> = ({ story, isLast, onNext, onBack }) =>
         {story.name}, {story.age}
       </h2>
 
-      <article className="space-y-5 opacity-0 animate-fade-in-up-delay-1">
+      {/* Story photo */}
+      {story.image && (
+        <div className="rounded-lg overflow-hidden mb-8 opacity-0 animate-fade-in-up-delay-1">
+          <img
+            src={story.image}
+            alt={`${story.name}'s story`}
+            className="w-full h-52 object-cover"
+            loading="lazy"
+          />
+        </div>
+      )}
+
+      <article className="space-y-5 opacity-0 animate-fade-in-up-delay-1 text-left">
         {story.body.map((paragraph, i) => (
-          <p key={i} className="font-body text-story-body text-foreground">
+          <p key={i} className="font-body text-story-body text-foreground text-left">
             {paragraph}
           </p>
         ))}
