@@ -1,11 +1,42 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import IntroScreen from "@/components/IntroScreen";
+import StorySelectionScreen from "@/components/StorySelectionScreen";
+import StoryScreen from "@/components/StoryScreen";
+import { stories } from "@/data/stories";
+
+type Screen = "intro" | "selection" | "story";
 
 const Index = () => {
+  const [screen, setScreen] = useState<Screen>("intro");
+  const [storyIndex, setStoryIndex] = useState(0);
+
+  const handleReadStories = () => setScreen("selection");
+  const handleSelectStory = (index: number) => {
+    setStoryIndex(index);
+    setScreen("story");
+  };
+  const handleNextStory = () => {
+    if (storyIndex < stories.length - 1) {
+      setStoryIndex(storyIndex + 1);
+    } else {
+      setScreen("selection");
+    }
+  };
+  const handleBackToStories = () => setScreen("selection");
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      <div className="mx-auto max-w-md min-h-screen">
+        {screen === "intro" && <IntroScreen onStart={handleReadStories} />}
+        {screen === "selection" && <StorySelectionScreen onSelect={handleSelectStory} />}
+        {screen === "story" && (
+          <StoryScreen
+            story={stories[storyIndex]}
+            isLast={storyIndex === stories.length - 1}
+            onNext={handleNextStory}
+            onBack={handleBackToStories}
+          />
+        )}
       </div>
     </div>
   );
