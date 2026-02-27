@@ -10,7 +10,7 @@ interface StoryScreenProps {
 
 const StoryScreen: FC<StoryScreenProps> = ({ story, isLast, onNext, onBack }) => {
   return (
-    <main className="min-h-screen px-6 py-10 animate-fade-in" key={story.name}>
+    <main className="min-h-screen px-6 py-10 animate-fade-in text-left" key={story.name}>
       {/* Back link */}
       <button
         onClick={onBack}
