@@ -51,6 +51,7 @@ export const stories: Story[] = [
   {
     name: "Margaret",
     age: 62,
+    image: "/images/margaret.webp",
     quote: "I didn't expect anxiety to begin at this stage of life.",
     body: [
       `I thought anxiety belonged to younger people. I didn't expect it to appear after retirement, when life had finally slowed down. But when the busy years ended, my thoughts became louder. Every physical sensation felt alarming. Every unknown felt dangerous.`,
