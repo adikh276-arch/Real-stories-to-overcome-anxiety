@@ -37,6 +37,7 @@ export const stories: Story[] = [
   {
     name: "Rhea",
     age: 22,
+    image: "/images/rhea.webp",
     quote: "I kept waiting to feel confident before living.",
     body: [
       `Anxiety sounded like a voice in my head that never stopped criticizing me. It told me I would embarrass myself, say the wrong thing, or be judged. After conversations, I would replay everything I said. Before events, I would imagine worst-case scenarios.`,
