@@ -11,6 +11,7 @@ export const stories: Story[] = [
   {
     name: "Aarav",
     age: 9,
+    image: "/images/aarav.webp",
     quote: "I thought being scared meant something was wrong with me.",
     body: [
       `I didn't know the word "anxiety" when I was younger — I only knew the feeling. My chest would feel tight, my stomach would hurt, and my mind would tell me something bad was about to happen. Even normal days felt dangerous. School mornings were the hardest. I would cling to my parents, afraid that once they left, I wouldn't be okay.`,
