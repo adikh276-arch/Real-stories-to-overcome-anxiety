@@ -24,6 +24,7 @@ export const stories: Story[] = [
   {
     name: "Daniel",
     age: 38,
+    image: "/images/daniel.webp",
     quote: "I believed worrying meant I was being responsible.",
     body: [
       `For years, I believed worrying was my job. If I thought through every possible problem, prepared for every outcome, and stayed mentally alert at all times, I could prevent things from going wrong. Anxiety felt productive. It felt responsible.`,
