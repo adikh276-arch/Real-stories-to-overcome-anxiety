@@ -7,7 +7,7 @@ interface StorySelectionScreenProps {
 
 const StorySelectionScreen: FC<StorySelectionScreenProps> = ({ onSelect }) => {
   return (
-    <main className="min-h-screen px-6 py-10">
+    <main className="min-h-screen px-6 py-10 text-left">
       <h2 className="font-heading text-2xl text-foreground mb-8 opacity-0 animate-fade-in-up">
         Choose a Story
       </h2>

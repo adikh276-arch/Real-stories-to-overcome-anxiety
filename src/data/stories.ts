@@ -4,12 +4,14 @@ export interface Story {
   quote: string;
   body: string[];
   reflection: string;
+  image?: string;
 }
 
 export const stories: Story[] = [
   {
     name: "Aarav",
     age: 9,
+    image: "/images/aarav.webp",
     quote: "I thought being scared meant something was wrong with me.",
     body: [
       `I didn't know the word "anxiety" when I was younger — I only knew the feeling. My chest would feel tight, my stomach would hurt, and my mind would tell me something bad was about to happen. Even normal days felt dangerous. School mornings were the hardest. I would cling to my parents, afraid that once they left, I wouldn't be okay.`,
@@ -22,6 +24,7 @@ export const stories: Story[] = [
   {
     name: "Daniel",
     age: 38,
+    image: "/images/daniel.webp",
     quote: "I believed worrying meant I was being responsible.",
     body: [
       `For years, I believed worrying was my job. If I thought through every possible problem, prepared for every outcome, and stayed mentally alert at all times, I could prevent things from going wrong. Anxiety felt productive. It felt responsible.`,
@@ -34,6 +37,7 @@ export const stories: Story[] = [
   {
     name: "Rhea",
     age: 22,
+    image: "/images/rhea.webp",
     quote: "I kept waiting to feel confident before living.",
     body: [
       `Anxiety sounded like a voice in my head that never stopped criticizing me. It told me I would embarrass myself, say the wrong thing, or be judged. After conversations, I would replay everything I said. Before events, I would imagine worst-case scenarios.`,
@@ -47,6 +51,7 @@ export const stories: Story[] = [
   {
     name: "Margaret",
     age: 62,
+    image: "/images/margaret.webp",
     quote: "I didn't expect anxiety to begin at this stage of life.",
     body: [
       `I thought anxiety belonged to younger people. I didn't expect it to appear after retirement, when life had finally slowed down. But when the busy years ended, my thoughts became louder. Every physical sensation felt alarming. Every unknown felt dangerous.`,
@@ -59,6 +64,7 @@ export const stories: Story[] = [
   {
     name: "Kabir",
     age: 45,
+    image: "/images/kabir.webp",
     quote: "My anxiety never looked like panic. It looked like productivity.",
     body: [
       `I woke up early, worked long hours, and filled every spare moment with something — news, emails, phone calls, background noise. If there was silence, I filled it. If there was stillness, I escaped it.`,
@@ -77,6 +83,7 @@ export const stories: Story[] = [
   {
     name: "Nisha",
     age: 34,
+    image: "/images/nisha.webp",
     quote: "I got promoted — and then couldn't sleep.",
     body: [
       `My anxiety began after something "good" happened.`,
