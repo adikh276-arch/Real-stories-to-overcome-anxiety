@@ -16,7 +16,7 @@ const LANGUAGES = [
 const SOURCE_FILE = path.join(__dirname, '../src/i18n/locales/en.json');
 const OUTPUT_DIR = path.join(__dirname, '../src/i18n/locales');
 
-async function translateText(text: string, targetLanguage: string): Promise<string> {
+async function translateText(text, targetLanguage) {
     if (!text || text.trim() === '') return text;
     try {
         const response = await axios.post(
@@ -27,16 +27,15 @@ async function translateText(text: string, targetLanguage: string): Promise<stri
                 source: 'en',
             }
         );
-        // Decode HTML entities like &quot; to "
         const translatedText = response.data.data.translations[0].translatedText;
         return he.decode(translatedText);
-    } catch (error: any) {
+    } catch (error) {
         console.error(`Error translating to ${targetLanguage}:`, error.response?.data || error.message);
         return text;
     }
 }
 
-async function translateObject(obj: any, targetLanguage: string): Promise<any> {
+async function translateObject(obj, targetLanguage) {
     if (typeof obj === 'string') {
         return await translateText(obj, targetLanguage);
     } else if (Array.isArray(obj)) {
@@ -46,7 +45,7 @@ async function translateObject(obj: any, targetLanguage: string): Promise<any> {
         }
         return translatedArray;
     } else if (typeof obj === 'object' && obj !== null) {
-        const translatedObj: any = {};
+        const translatedObj = {};
         for (const key in obj) {
             translatedObj[key] = await translateObject(obj[key], targetLanguage);
         }
@@ -62,7 +61,6 @@ async function main() {
         console.log(`Translating to ${lang}...`);
         const translatedData = await translateObject(sourceData, lang);
         const outputPath = path.join(OUTPUT_DIR, `${lang}.json`);
-        // JSON.stringify will automatically escape internal quotes properly
         fs.writeFileSync(outputPath, JSON.stringify(translatedData, null, 2));
         console.log(`Saved ${lang}.json`);
     }
