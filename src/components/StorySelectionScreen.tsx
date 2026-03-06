@@ -1,15 +1,18 @@
 import { FC } from "react";
 import { stories } from "@/data/stories";
+import { useTranslation } from "react-i18next";
 
 interface StorySelectionScreenProps {
   onSelect: (index: number) => void;
 }
 
 const StorySelectionScreen: FC<StorySelectionScreenProps> = ({ onSelect }) => {
+  const { t } = useTranslation();
+
   return (
     <main className="min-h-screen px-6 py-10 text-left">
       <h2 className="font-heading text-2xl text-foreground mb-8 opacity-0 animate-fade-in-up">
-        Choose a Story
+        {t('chooseStory')}
       </h2>
 
       <div className="flex flex-col gap-4">
@@ -29,10 +32,10 @@ const StorySelectionScreen: FC<StorySelectionScreenProps> = ({ onSelect }) => {
             `}
           >
             <p className="font-body font-semibold text-base text-foreground">
-              {story.name}, {story.age}
+              {t(`stories.${index}.name`)}, {story.age}
             </p>
             <p className="mt-2 font-body text-sm text-primary italic leading-relaxed">
-              "{story.quote}"
+              "{t(`stories.${index}.quote`)}"
             </p>
           </button>
         ))}

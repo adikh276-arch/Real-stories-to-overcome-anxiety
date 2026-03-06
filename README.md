@@ -1,73 +1,53 @@
-# Welcome to your Lovable project
+# Real Stories of Overcoming Anxiety
 
-## Project info
+Real people sharing their journeys of overcoming anxiety. Calming, hopeful stories that inspire courage.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+- **20 Languages Support**: Internationalized content for a global audience.
+- **Subpath Hosting**: Configured for `/stories_to_overcome_anxiety/`.
+- **Dockerized**: Easy deployment with Nginx and Docker.
+- **CI/CD**: Automated builds with GitHub Actions.
 
-There are several ways of editing your application.
+## Local Development
 
-**Use Lovable**
+1.  **Clone the repository**:
+    ```sh
+    git clone https://github.com/adikh276-arch/Real-stories-to-overcome-anxiety
+    cd Real-stories-to-overcome-anxiety
+    ```
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+2.  **Install dependencies**:
+    ```sh
+    npm install
+    ```
 
-Changes made via Lovable will be committed automatically to this repo.
+3.  **Run development server**:
+    ```sh
+    npm run dev
+    ```
 
-**Use your preferred IDE**
+4.  **Open the app**:
+    Visit [http://localhost:5173/stories_to_overcome_anxiety/](http://localhost:5173/stories_to_overcome_anxiety/)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Deployment
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Docker
 
-Follow these steps:
-
+Build the image:
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+docker build -t stories_to_overcome_anxiety .
 ```
 
-**Edit a file directly in GitHub**
+Run the container:
+```sh
+docker run -p 8080:80 stories_to_overcome_anxiety
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### GitHub Actions
 
-**Use GitHub Codespaces**
+The project includes a GitHub Actions workflow to automatically build and push the Docker image to a private registry on every push to the `main` branch.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**Required Secrets**:
+- `USERNAME`: Registry username
+- `PASSWORD`: Registry password
